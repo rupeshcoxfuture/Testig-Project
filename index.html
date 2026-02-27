@@ -17,11 +17,12 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">Pizzy<span>Pop</span></a>
-            <ul class="nav-links">
+            <a href="#home" class="logo">Pizzy<span>Pop</span></a>
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#about">About</a></li>
@@ -29,38 +30,41 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#contact" class="btn btn-primary">Order Now</a></li>
             </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="primary-navigation"
+                aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="assets/Pizza_pomo.mp4" type="video/mp4">
-            <!-- Fallback for local file: <source src="assets/pizza-promo.mp4" type="video/mp4"> -->
-        </video>
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <span class="badge">NYC's Finest Slices</span>
-                <h1>The Most <span>Vibrant</span> Pizza in NYC</h1>
-                <p>Hot, fresh, and bursting with flavor. PizzyPop brings the urban energy of New York straight to your
-                    taste buds.</p>
-                <div class="hero-btns">
-                    <a href="#menu" class="btn btn-primary">Order Online</a>
-                    <a href="#location" class="btn btn-secondary">Visit Us Today</a>
+    <main id="main">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <video autoplay muted loop playsinline class="hero-video" aria-label="PizzyPop pizza promo video">
+                <source src="assets/Pizza_pomo.mp4" type="video/mp4">
+                <source src="assets/pizza-promo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="badge">NYC's Finest Slices</span>
+                    <h1>The Most <span>Vibrant</span> Pizza in NYC</h1>
+                    <p>Hot, fresh, and bursting with flavor. PizzyPop brings the urban energy of New York straight to your
+                        taste buds.</p>
+                    <div class="hero-btns">
+                        <a href="#menu" class="btn btn-primary">Order Online</a>
+                        <a href="#location" class="btn btn-secondary">Visit Us Today</a>
+                    </div>
+                    <div class="social-links" aria-label="Social links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
+                <!-- Removing hero-image as we are using background video -->
             </div>
-            <!-- Removing hero-image as we are using background video -->
-        </div>
-    </section>
+        </section>
 
     <!-- Viral Special Section: The Gotham Burger -->
     <section class="special-feature" id="burger-special">
@@ -69,7 +73,8 @@
                 <div class="special-image-container">
                     <div class="antigravity-elements">
                         <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1899&auto=format&fit=crop"
-                            alt="The Gotham Burger" class="main-burger float-main">
+                            alt="The Gotham Burger" class="main-burger float-main" loading="lazy" decoding="async"
+                            width="900" height="600">
                         <div class="floating-badge badge-1">Molten Cheddar</div>
                         <div class="floating-badge badge-2">100% Angus</div>
                         <div class="floating-badge badge-3">Toasted Brioche</div>
@@ -94,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-secondary">Experience The Pop</a>
+                    <a href="#contact" class="btn btn-secondary">Experience The Pop</a>
                 </div>
             </div>
         </div>
@@ -104,21 +109,21 @@
     <section class="quick-info">
         <div class="container">
             <div class="info-item">
-                <i class="fas fa-motorcycle"></i>
+                <i class="fas fa-motorcycle" aria-hidden="true"></i>
                 <div>
                     <h4>Fast Delivery</h4>
                     <p>Under 30 mins</p>
                 </div>
             </div>
             <div class="info-item">
-                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf" aria-hidden="true"></i>
                 <div>
                     <h4>Fresh Ingredients</h4>
                     <p>Locally sourced</p>
                 </div>
             </div>
             <div class="info-item">
-                <i class="fas fa-clock"></i>
+                <i class="fas fa-clock" aria-hidden="true"></i>
                 <div>
                     <h4>Open Late</h4>
                     <p>Until 2 AM daily</p>
@@ -138,37 +143,40 @@
                 <!-- Menu Items will be here -->
                 <div class="menu-card">
                     <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?q=80&w=2076&auto=format&fit=crop"
-                        alt="The Classic Pepperoni">
+                        alt="The Classic Pepperoni" loading="lazy" decoding="async" width="900" height="600">
                     <div class="menu-info">
                         <h3>The Classic Pop</h3>
                         <p>Our signature pepperoni with extra mozzarella and spicy honey.</p>
                         <span class="price">$18.99</span>
-                        <a href="#" class="add-btn"><i class="fas fa-plus"></i></a>
+                        <a href="#contact" class="add-btn" aria-label="Add The Classic Pop to order"><i
+                                class="fas fa-plus" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="menu-card">
                     <img src="https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?q=80&w=1925&auto=format&fit=crop"
-                        alt="Veggie Blast">
+                        alt="Veggie Blast" loading="lazy" decoding="async" width="900" height="600">
                     <div class="menu-info">
                         <h3>Urban Garden</h3>
                         <p>Bell peppers, olives, mushrooms, and fresh basil pesto.</p>
                         <span class="price">$16.99</span>
-                        <a href="#" class="add-btn"><i class="fas fa-plus"></i></a>
+                        <a href="#contact" class="add-btn" aria-label="Add Urban Garden to order"><i
+                                class="fas fa-plus" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="menu-card">
                     <img src="https://images.unsplash.com/photo-1593504049359-74330189a355?q=80&w=1922&auto=format&fit=crop"
-                        alt="Hot & Spicy">
+                        alt="Hot & Spicy" loading="lazy" decoding="async" width="900" height="600">
                     <div class="menu-info">
                         <h3>Spicy NYC</h3>
                         <p>Jalapeños, spicy sausage, and red chili flakes.</p>
                         <span class="price">$19.99</span>
-                        <a href="#" class="add-btn"><i class="fas fa-plus"></i></a>
+                        <a href="#contact" class="add-btn" aria-label="Add Spicy NYC to order"><i class="fas fa-plus"
+                                aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
             <div class="center-btn">
-                <a href="#" class="btn btn-outline">View Full Menu</a>
+                <a href="#menu" class="btn btn-outline">View Full Menu</a>
             </div>
         </div>
     </section>
@@ -179,7 +187,7 @@
             <div class="about-grid">
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1974&auto=format&fit=crop"
-                        alt="PizzyPop Interior">
+                        alt="PizzyPop Interior" loading="lazy" decoding="async" width="900" height="700">
                 </div>
                 <div class="about-content">
                     <span class="sub">Our Story</span>
@@ -204,19 +212,19 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=2070&auto=format&fit=crop"
-                        alt="Pizza Love">
+                        alt="Pizza Love" loading="lazy" decoding="async" width="900" height="600">
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?q=80&w=2070&auto=format&fit=crop"
-                        alt="Fresh from Oven">
+                        alt="Fresh from Oven" loading="lazy" decoding="async" width="900" height="600">
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?q=80&w=2070&auto=format&fit=crop"
-                        alt="Street Vibes">
+                        alt="Street Vibes" loading="lazy" decoding="async" width="900" height="600">
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1511689660979-10d2b1aada49?q=80&w=2046&auto=format&fit=crop"
-                        alt="Toppings Detail">
+                        alt="Toppings Detail" loading="lazy" decoding="async" width="900" height="600">
                 </div>
             </div>
         </div>
@@ -229,52 +237,80 @@
                 <div class="location-info">
                     <h2>Visit Us</h2>
                     <div class="info-block">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
                             <h4>Address</h4>
                             <p>123 Vibrant Way, Brooklyn, NY 11201</p>
                         </div>
                     </div>
                     <div class="info-block">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <div>
                             <h4>Phone</h4>
                             <p>(555) 123-PIZZY</p>
                         </div>
                     </div>
                     <div class="info-block">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
                         <div>
                             <h4>Hours</h4>
                             <p>Mon - Sun: 11 AM - 2 AM</p>
                         </div>
                     </div>
                     <div class="social-links-prominent">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="map-container">
                     <!-- Placeholder for Map -->
                     <div class="map-placeholder">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <p><iframe
+                        <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                        <iframe title="PizzyPop location map"
                                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d18740478.058798015!2d53.0326163283468!3d33.878103920461186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1771767243886!5m2!1sen!2sin"
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact / Order Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Order <span>Now</span></h2>
+                <p>Tell us what you’re craving and we’ll get it started.</p>
+            </div>
+            <form class="contact-form" action="#" method="post">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+                    <input type="tel" name="phone" placeholder="Phone number" autocomplete="tel" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="Email address" autocomplete="email" required>
+                    <select name="pickup_or_delivery" required aria-label="Pickup or delivery">
+                        <option value="" selected disabled>Pickup or delivery?</option>
+                        <option value="pickup">Pickup</option>
+                        <option value="delivery">Delivery</option>
+                    </select>
+                </div>
+                <textarea name="order_details" rows="4" placeholder="Order details (pizza, toppings, notes)"
+                    required></textarea>
+                <button type="submit" class="btn btn-primary">Place Order Request</button>
+            </form>
+        </div>
+    </section>
+    </main>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="#" class="logo">Pizzy<span>Pop</span></a>
+                    <a href="#home" class="logo">Pizzy<span>Pop</span></a>
                     <p>NYC's Most Vibrant Pizza Slice. Fresh, Bold, and Always Hot.</p>
                 </div>
                 <div class="footer-links">
@@ -289,8 +325,8 @@
                 <div class="footer-newsletter">
                     <h4>Join the Pop</h4>
                     <p>Get exclusive deals and slice alerts!</p>
-                    <form>
-                        <input type="email" placeholder="Your email">
+                    <form action="#" method="post">
+                        <input type="email" name="email" placeholder="Your email" autocomplete="email" required>
                         <button type="submit" class="btn btn-primary">Join</button>
                     </form>
                 </div>
@@ -301,16 +337,16 @@
         </div>
     </footer>
 
-    <div class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+    <button class="scroll-top" type="button" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
 
     <!-- Custom Pizza Cursor -->
-    <div class="custom-cursor">
-        <i class="fas fa-pizza-slice"></i>
+    <div class="custom-cursor" aria-hidden="true">
+        <i class="fas fa-pizza-slice" aria-hidden="true"></i>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
